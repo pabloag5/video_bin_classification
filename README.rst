@@ -1,3 +1,24 @@
+VIDEO CLASSIFICATION
+====================
+
+This project aims to classify videos into two classes.
+The tested architectures are:
+- extended traditional 2D image classification to video frames
+- 10 channel optical flow to analise motion
+- LSTM to video frames
+- classify using audio cue from videos
+- 3D CNN (3D convolution)
+- split 3D CNN
+
+Steps to train and test:
+- The modules read MP4 files arranged as `data/videos/class/` for decoding and training, and `data/test/` for evaluation.
+- Videos should be decoded using `preprocessing.py`
+- preparing video data with `datapreparation.py` to get train and validation datasets
+- train the models with `train_model.py`; note: the script runs one model at a time, meaning if is used one architecture with different training parameters those are considered separated models
+- evaluate models against test dataset with `eval_models.py`; note: the script evals one model at a time; it reads RAW MP4 files.
+
+The modules consist of the following:
+
 preprocessing
 =============
 The module contains all methods required for preprocessing the data before feeding
